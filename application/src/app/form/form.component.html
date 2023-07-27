@@ -1,0 +1,51 @@
+<!-- form.component.html -->
+<div class="form-container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="userForm" class="p-fluid">
+    <div class="p-field">
+      <label for="username">Username</label>
+      <input
+        id="username"
+        type="text"
+        pInputText
+        formControlName="username"
+        class="p-inputtext"
+      />
+      <small *ngIf="userForm.get('username')?.invalid && userForm.get('username')?.dirty" class="p-error">
+        Username is required.
+      </small>
+    </div>
+    <div class="p-field">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        pInputText
+        formControlName="email"
+        class="p-inputtext"
+      />
+      <small *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.dirty" class="p-error">
+        Email is required and must be a valid email address.
+      </small>
+    </div>
+    <div class="p-field">
+      <label for="profileImage">Profile Image</label>
+      <p-fileUpload
+        [customUpload]="true"
+        [maxFileSize]="5000000"
+        (uploadHandler)="onFileUpload($event)"
+        accept="image/*"
+        chooseLabel="Browse"
+      ></p-fileUpload>
+      <small *ngIf="!isImageValid && isImageDirty" class="p-error">
+        Profile image must be an image with a maximum size of 5 MB.
+      </small>
+    </div>
+    <button
+      type="submit"
+      pButton
+      [disabled]="userForm.invalid || !isImageValid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

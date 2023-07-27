@@ -1,0 +1,15 @@
+/* form.component.css */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .p-field {
+    margin-bottom: 20px;
+  }
+  
+  .p-error {
+    color: red;
+  }
+  
