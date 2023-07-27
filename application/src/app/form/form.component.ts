@@ -25,7 +25,6 @@ export class FormComponent implements OnInit {
   onSubmit() {
     if (this.userForm.valid && this.isImageValid) {
       console.log('Form data:', this.userForm.value);
-      // You can perform your form submission logic here, like calling an API to save the data.
     } else {
       console.log('Form data is invalid.');
     }

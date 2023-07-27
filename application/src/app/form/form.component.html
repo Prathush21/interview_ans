@@ -9,7 +9,12 @@
         formControlName="username"
         class="p-inputtext"
       />
-      <small *ngIf="userForm.get('username')?.invalid && userForm.get('username')?.dirty" class="p-error">
+      <small
+        *ngIf="
+          userForm.get('username')?.invalid && userForm.get('username')?.dirty
+        "
+        class="p-error"
+      >
         Username is required.
       </small>
     </div>
@@ -22,7 +27,10 @@
         formControlName="email"
         class="p-inputtext"
       />
-      <small *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.dirty" class="p-error">
+      <small
+        *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.dirty"
+        class="p-error"
+      >
         Email is required and must be a valid email address.
       </small>
     </div>
