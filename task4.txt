@@ -1,0 +1,6 @@
+Assuming getDB function create the db instance
+1.const db = getDB()
+db.collection(‘information’).insertOne(mydoc)
+
+2.db.collection(‘information’).updateMany({}, { $set: { isActive: true } });
+
